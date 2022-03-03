@@ -11,7 +11,7 @@ export default function App(props) {
 
   return (
     <View>
-      
+      <View><Text>Felipe teste</Text></View>
       <TextBox/>
       <Modal animationType="fade" transparent={true} visible={visivel} style={{}}>
       <View style={estilos.modal}>

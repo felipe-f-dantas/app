@@ -1,46 +1,39 @@
-
-// aplicativo teste login sem api e sem banco de dados
 import React, {useState}from 'react'
 import { View, Text,Button, TouchableHighlight,Modal,StyleSheet } from 'react-native'
-import TextBox from './components/TextBox'
-import FO from './components/FO';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-export default function App(props) {
+const Pilha = createStackNavigator(); 
 
-  const [visivel,setVisivel] = useState(false)
+function TelaHome({navigation}){
+    return(
+        <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+            <Text>Tela Home</Text>
+            <Text>First Screen</Text>
+        </View>
+    )
+}
 
-  return (
-    <View>
-      <View><Text>Felipe teste</Text></View>
-      <TextBox/>
-      <Modal animationType="fade" transparent={true} visible={visivel} style={{}}>
-      <View style={estilos.modal}>
-      <FO/>
-      <Button title="Enviar" onPress={()=>{setVisivel(false)}}/>
+function TelaCanal({navigation}){
+  return(
+      <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+          <Text>Tela Canal</Text>
+          <Text>Second Screen</Text>
       </View>
-      </Modal>
-      
-      <Button title="Esqueci Minha Senha" onPress={()=>{setVisivel(true)}}/>
-      
-    </View>
-
-
-
-
   )
 }
-const estilos=StyleSheet.create({
 
-  modal:{
-      backgroundColor:"#BFE0FF",
-      margin:20,
-      padding:20,
-      borderRadius:20,
-      elevation:10,
+export default function () {
 
-  },
+  
 
-  txt:{
-      color:"white"
-  }
-})
+  return (
+    <NavigationContainer>
+     <Pilha.Navigator>
+        <Pilha.Screen name="Home" component={TelaHome} options={{title:'Tela Inicial'}}/>
+        <Pilha.Screen name="Canal" component={TelaCanal} options={{title:'Tela Secundaria'}}/>
+     </Pilha.Navigator>
+    </NavigationContainer>
+    
+  )
+}

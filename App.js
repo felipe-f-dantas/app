@@ -59,12 +59,13 @@ export default function () {
   return (
     <NavigationContainer initialRouteName="Tela Home">
      <Pilha.Navigator>
-        <Pilha.Screen name="Home" component={TelaHome} options={{title:'Tela Inicial'}}/>
-        <Pilha.Screen name="Canal" component={TelaCanal} options={{title:'Tela Secundaria'}}/>
-        <Pilha.Screen name="Cursos" component={TelaCursos} options={{title:'Cursos do Canal'}}/>
-        <Pilha.Screen name="CursoReactNative" component={TelaCursoReactNative} options={{title:'Cursos de React'}}/>
+        <Pilha.Screen name="Home" component={TelaHome} options={{title:'Tela Inicial',headerStyle:{backgroundColor:'blue'},headerTintColor:'white',headerRight:()=>(<Button title="Cursos" color="#000" onPress={()=>alert('Botão Cursos Clicado')}/>),}}/>
+        <Pilha.Screen name="Canal" component={TelaCanal} options={{title:'Tela Canal',headerStyle:{backgroundColor:'blue'},headerTintColor:'white',headerTitleStyle:'bold'}}/>
+        <Pilha.Screen name="Cursos" component={TelaCursos} options={{title:'Cursos do Canal',headerStyle:{backgroundColor:'blue'},headerTintColor:'white'}}/>
+        <Pilha.Screen name="CursoReactNative" component={TelaCursoReactNative} options={{title:'Cursos de React',headerStyle:{backgroundColor:'blue'},headerTintColor:'white'}}/>
      </Pilha.Navigator>
     </NavigationContainer>
     
   )
 }
+

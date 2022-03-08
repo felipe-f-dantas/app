@@ -11,6 +11,7 @@ function TelaHome({navigation}){
             <Text>Tela Home</Text>
             <Text>First Screen</Text>
             <Button title="Ir para Canal" onPress={()=>navigation.navigate('Canal')}/>
+            <Button title="Cursos" onPress={()=>navigation.navigate('Cursos')}/>
         </View>
     )
 }
@@ -26,6 +27,31 @@ function TelaCanal({navigation}){
   )
 }
 
+function TelaCursos({navigation}){
+  return(
+      <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+          <Text>Tela Canal</Text>
+          <Text>Second Screen</Text>
+          <Button title="React Native" onPress={()=>navigation.navigate('CursoReactNative',{aulas:50,autor:'Felipe Dantas'})}/>
+      </View>
+  )
+}
+function TelaCursoReactNative({route,navigation}){
+  // const {aulas,autor} = route.params;
+  // const {aulas} = route.params;
+  // const {autor} = route.params;
+  const aulas = route.params.aulas;
+  const autor = route.params.autor;
+  return(
+      <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
+          <Text>CursoReactNative</Text>
+          <Text>Aulas: {aulas}</Text>
+          <Text>Autor: {autor}</Text>
+          <Button title="Ir para Home" onPress={()=>navigation.navigate('Home')}/>
+          <Button title="Voltar para cursos" onPress={()=>navigation.goBack()}/>
+      </View>
+  )
+}
 export default function () {
 
   
@@ -35,6 +61,8 @@ export default function () {
      <Pilha.Navigator>
         <Pilha.Screen name="Home" component={TelaHome} options={{title:'Tela Inicial'}}/>
         <Pilha.Screen name="Canal" component={TelaCanal} options={{title:'Tela Secundaria'}}/>
+        <Pilha.Screen name="Cursos" component={TelaCursos} options={{title:'Cursos do Canal'}}/>
+        <Pilha.Screen name="CursoReactNative" component={TelaCursoReactNative} options={{title:'Cursos de React'}}/>
      </Pilha.Navigator>
     </NavigationContainer>
     

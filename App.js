@@ -8,7 +8,7 @@ import FO from './components/FO';
 export default function App(props) {
 
   const [visivel,setVisivel] = useState(false)
-cxvdfgdfgdgdfgdfgdfgdfgdfgddfg
+
   return (
     <View>
       <View><Text>Felipe teste</Text></View>

@@ -1,9 +1,10 @@
+import 'react-native-gesture-handler';
 import React, {useState}from 'react'
 import { View, Text,Button, TouchableHighlight,Modal,StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Guias = createBottomTabNavigator(); 
+const Guias = createDrawerNavigator(); 
 
 function TelaHome({navigation}){
     return(
@@ -32,22 +33,7 @@ function TelaCursos({navigation}){
       </View>
   )
 }
-// function TelaCursoReactNative({route,navigation}){
-//   // const {aulas,autor} = route.params;
-//   // const {aulas} = route.params;
-//   // const {autor} = route.params;
-//   const aulas = route.params.aulas;
-//   const autor = route.params.autor;
-//   return(
-//       <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-//           <Text>CursoReactNative</Text>
-//           <Text>Aulas: {aulas}</Text>
-//           <Text>Autor: {autor}</Text>
-//           <Button title="Ir para Home" onPress={()=>navigation.navigate('Home')}/>
-//           <Button title="Voltar para cursos" onPress={()=>navigation.goBack()}/>
-//       </View>
-//   )
-// }
+
 export default function () {
 
   
@@ -63,4 +49,3 @@ export default function () {
     
   )
 }
-
